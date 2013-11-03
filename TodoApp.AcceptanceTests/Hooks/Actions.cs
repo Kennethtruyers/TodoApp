@@ -30,7 +30,7 @@ namespace TodoApp.AcceptanceTests
             db.DeleteAll();
             if (string.IsNullOrEmpty(_url))
             {
-                _url = Environment.GetEnvironmentVariable("websiteUrl");
+                _url = Environment.GetEnvironmentVariable("env.websiteUrl");
             }
             if (string.IsNullOrEmpty(_url)) 
             {
