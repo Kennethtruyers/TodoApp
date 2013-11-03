@@ -31,11 +31,16 @@ namespace TodoApp.AcceptanceTests
             if (string.IsNullOrEmpty(_url))
             {
                 _url = Environment.GetEnvironmentVariable("env.websiteUrl");
+                if (string.IsNullOrEmpty(_url))
+                {
+                    _url = "http://localhost:3159";
+                }
+                System.Diagnostics.Trace.WriteLine("Using URL: " + _url);
+                System.Diagnostics.Trace.WriteLine("env.websiteUrl: " + Environment.GetEnvironmentVariable("env.websiteUrl"));
+                System.Diagnostics.Trace.WriteLine("websiteUrl: " + Environment.GetEnvironmentVariable("websiteUrl"));
             }
-            if (string.IsNullOrEmpty(_url)) 
-            {
-                _url = "http://localhost:3159";
-            }
+            
+            
 
             Driver.Navigate().GoToUrl(_url);            
         }
