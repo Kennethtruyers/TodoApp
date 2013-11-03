@@ -17,7 +17,7 @@ namespace TodoApp.AcceptanceTests
     public class Actions
     {
         private static Db db = new Db();
-
+        private string _url = string.Empty;
         static Actions()
         {
             Driver = new InternetExplorerDriver();
@@ -28,7 +28,16 @@ namespace TodoApp.AcceptanceTests
         public void BeforeScenario()
         {
             db.DeleteAll();
-            Driver.Navigate().GoToUrl("http://localhost:3159");            
+            if (string.IsNullOrEmpty(_url))
+            {
+                _url = Environment.GetEnvironmentVariable("websiteUrl");
+            }
+            if (string.IsNullOrEmpty(_url)) 
+            {
+                _url = "http://localhost:3159";
+            }
+
+            Driver.Navigate().GoToUrl(_url);            
         }
 
         public static IWebDriver Driver {get; private set;}
