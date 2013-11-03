@@ -42,8 +42,8 @@ namespace TodoApp.Controllers
             }
 
             // Need to detach to avoid duplicate primary key exception when SaveChanges is called
-            db.Entry(todoList).State = EntityState.Detached;
-            db.Entry(todoItem).State = EntityState.Modified;
+            db.Entry(todoList).State = System.Data.Entity.EntityState.Detached;
+            db.Entry(todoItem).State = System.Data.Entity.EntityState.Modified;
 
             try
             {
@@ -80,7 +80,7 @@ namespace TodoApp.Controllers
             TodoItem todoItem = todoItemDto.ToEntity();
 
             // Need to detach to avoid loop reference exception during JSON serialization
-            db.Entry(todoList).State = EntityState.Detached;
+            db.Entry(todoList).State = System.Data.Entity.EntityState.Detached;
             db.TodoItems.Add(todoItem);
             db.SaveChanges();
             todoItemDto.TodoItemId = todoItem.TodoItemId;
