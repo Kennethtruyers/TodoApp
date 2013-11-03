@@ -65,7 +65,7 @@ namespace TodoApp.Controllers
                 return Request.CreateResponse(HttpStatusCode.Unauthorized);
             }
 
-            db.Entry(todoList).State = System.Data.Entity.EntityState.Modified;
+            db.Entry(todoList).State = EntityState.Modified;
 
             try
             {
