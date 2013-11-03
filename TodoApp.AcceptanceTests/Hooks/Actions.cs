@@ -38,6 +38,14 @@ namespace TodoApp.AcceptanceTests
                 System.Diagnostics.Trace.WriteLine("Using URL: " + _url);
                 System.Diagnostics.Trace.WriteLine("env.websiteUrl: " + Environment.GetEnvironmentVariable("env.websiteUrl"));
                 System.Diagnostics.Trace.WriteLine("websiteUrl: " + Environment.GetEnvironmentVariable("websiteUrl"));
+
+                System.Diagnostics.Debug.WriteLine("Using URL: " + _url);
+                System.Diagnostics.Debug.WriteLine("env.websiteUrl: " + Environment.GetEnvironmentVariable("env.websiteUrl"));
+                System.Diagnostics.Debug.WriteLine("websiteUrl: " + Environment.GetEnvironmentVariable("websiteUrl"));
+
+                Console.WriteLine("Using URL: " + _url);
+                Console.WriteLine("env.websiteUrl: " + Environment.GetEnvironmentVariable("env.websiteUrl"));
+                Console.WriteLine("websiteUrl: " + Environment.GetEnvironmentVariable("websiteUrl"));
             }
             
             
