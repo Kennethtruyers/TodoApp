@@ -35,17 +35,11 @@ namespace TodoApp.AcceptanceTests
                 {
                     _url = "http://localhost:3159";
                 }
-                System.Diagnostics.Trace.WriteLine("Using URL: " + _url);
-                System.Diagnostics.Trace.WriteLine("env.websiteUrl: " + Environment.GetEnvironmentVariable("env.websiteUrl"));
-                System.Diagnostics.Trace.WriteLine("websiteUrl: " + Environment.GetEnvironmentVariable("websiteUrl"));
-
-                System.Diagnostics.Debug.WriteLine("Using URL: " + _url);
-                System.Diagnostics.Debug.WriteLine("env.websiteUrl: " + Environment.GetEnvironmentVariable("env.websiteUrl"));
-                System.Diagnostics.Debug.WriteLine("websiteUrl: " + Environment.GetEnvironmentVariable("websiteUrl"));
-
-                Console.WriteLine("Using URL: " + _url);
-                Console.WriteLine("env.websiteUrl: " + Environment.GetEnvironmentVariable("env.websiteUrl"));
-                Console.WriteLine("websiteUrl: " + Environment.GetEnvironmentVariable("websiteUrl"));
+                
+                var debug = "Using URL: " + _url + Environment.NewLine +
+                "env.websiteUrl: " + Environment.GetEnvironmentVariable("env.websiteUrl") + Environment.NewLine +
+                "websiteUrl: " + Environment.GetEnvironmentVariable("websiteUrl");
+                System.IO.File.WriteAllText("c:\users\kenneth\documents\info.txt", debug);
             }
             
             
