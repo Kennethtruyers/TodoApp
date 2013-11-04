@@ -39,7 +39,7 @@ namespace TodoApp.AcceptanceTests
                 var debug = "Using URL: " + _url + Environment.NewLine +
                 "env.websiteUrl: " + Environment.GetEnvironmentVariable("env.websiteUrl") + Environment.NewLine +
                 "websiteUrl: " + Environment.GetEnvironmentVariable("websiteUrl");
-                System.IO.File.WriteAllText("c:\users\kenneth\documents\info.txt", debug);
+                System.IO.File.WriteAllText(@"c:\users\kenneth\documents\info.txt", debug);
             }
             
             
