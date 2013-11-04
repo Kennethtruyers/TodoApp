@@ -30,19 +30,12 @@ namespace TodoApp.AcceptanceTests
             db.DeleteAll();
             if (string.IsNullOrEmpty(_url))
             {
-                _url = Environment.GetEnvironmentVariable("env.websiteUrl");
+                _url = Environment.GetEnvironmentVariable("websiteUrl");
                 if (string.IsNullOrEmpty(_url))
                 {
                     _url = "http://localhost:3159";
                 }
-                
-                var debug = "Using URL: " + _url + Environment.NewLine +
-                "env.websiteUrl: " + Environment.GetEnvironmentVariable("env.websiteUrl") + Environment.NewLine +
-                "websiteUrl: " + Environment.GetEnvironmentVariable("websiteUrl");
-                System.IO.File.WriteAllText(@"c:\users\kenneth\documents\info.txt", debug);
             }
-            
-            
 
             Driver.Navigate().GoToUrl(_url);            
         }
