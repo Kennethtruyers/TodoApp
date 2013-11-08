@@ -21,7 +21,7 @@ namespace TodoApp.AcceptanceTests
         static Actions()
         {
             Driver = new InternetExplorerDriver();
-            Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(4));
+            Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
         }
 
         [BeforeScenario]
