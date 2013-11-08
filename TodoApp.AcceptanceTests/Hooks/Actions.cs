@@ -27,12 +27,14 @@ namespace TodoApp.AcceptanceTests
         [BeforeScenario]
         public void BeforeScenario()
         {
-            db.DeleteAll();
+            
             if (string.IsNullOrEmpty(_url))
             {
                 _url = Environment.GetEnvironmentVariable("websiteUrl");
                 if (string.IsNullOrEmpty(_url))
                 {
+                    // This is a local run
+                    db.DeleteAll();
                     _url = "http://localhost:3159";
                 }
             }
