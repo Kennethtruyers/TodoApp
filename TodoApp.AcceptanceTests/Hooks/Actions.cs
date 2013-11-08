@@ -21,7 +21,7 @@ namespace TodoApp.AcceptanceTests
         static Actions()
         {
             Driver = new InternetExplorerDriver();
-            Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
+            Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(4));
         }
 
         [BeforeScenario]
@@ -35,14 +35,7 @@ namespace TodoApp.AcceptanceTests
                 {
                     _url = "http://localhost:3159";
                 }
-                
-                var debug = "Using URL: " + _url + Environment.NewLine +
-                "env.websiteUrl: " + Environment.GetEnvironmentVariable("env.websiteUrl") + Environment.NewLine +
-                "websiteUrl: " + Environment.GetEnvironmentVariable("websiteUrl");
-                System.IO.File.WriteAllText(@"c:\users\kenneth\documents\info.txt", debug);
             }
-            
-            
 
             Driver.Navigate().GoToUrl(_url);            
         }
